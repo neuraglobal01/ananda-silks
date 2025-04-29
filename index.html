@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananda Silks - Premium Silk Sarees in Karur</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS will go here */
+        :root {
+            --primary-color: #d4af37; /* Gold */
+            --secondary-color: #8b0000; /* Dark red */
+            --accent-color: #ffd700; /* Light gold */
+            --text-color: #333;
+            --light-bg: #fff9e6;
+            --dark-bg: #f5f5f5;
+        }
+        
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text h1 {
+            color: var(--secondary-color);
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .logo-text span {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://www.psrsilks.com/cdn/shop/files/IMG_9006_874a8dfb-dc87-4736-b423-68ec60c0f853.jpg?v=1713249870&width=1920');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Products Section */
+        .products {
+            background-color: var(--light-bg);
+        }
+        
+        .product-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .category-btn {
+            padding: 0.5rem 1.5rem;
+            background-color: white;
+            border: 1px solid var(--primary-color);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-info h3 {
+            margin-top: 0;
+            color: var(--secondary-color);
+        }
+        
+        .product-info .price {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--dark-bg);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .testimonial-text:before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        .author-info h4 {
+            margin: 0;
+            color: var(--secondary-color);
+        }
+        
+        .author-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-logo img {
+            height: 60px;
+        }
+        
+        .social-links {
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+        /* Additional styles for Men's Wear section */
+#mens-wear .product-info .sizes {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Responsive adjustments for men's wear */
+@media (max-width: 600px) {
+    #mens-wear .product-categories {
+        overflow-x: auto;
+        white-space: nowrap;
+        justify-content: flex-start;
+        padding-bottom: 10px;
+    }
+    
+    #mens-wear .category-btn {
+        flex: 0 0 auto;
+    }
+}
+/* Additional styles for Kids Wear section */
+#kids-wear .product-info .gender {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+#kids-wear .product-info .gender[data-gender="boys"] {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+#kids-wear .product-info .gender[data-gender="girls"] {
+    background-color: #fce4ec;
+    color: #c2185b;
+}
+
+#kids-wear .product-info .gender[data-gender="unisex"] {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+/* Age range styling */
+#kids-wear .product-info .sizes {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+/* Kids-specific responsive adjustments */
+@media (max-width: 600px) {
+    #kids-wear .product-categories {
+        overflow-x: auto;
+        white-space: nowrap;
+        justify-content: flex-start;
+        padding-bottom: 10px;
+    }
+    
+    #kids-wear .category-btn {
+        flex: 0 0 auto;
+    }
+}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://img.freepik.com/premium-vector/fashion-saree-logo-design-with-women-figure-template-illustration-generative-ai_1161132-804.jpg" alt="Ananda Silks Logo">
+                <div class="logo-text">
+                    <h1>Ananda Silks</h1>
+                    <span>Since 1985</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Premium Silk Sarees in Pallapatti</h1>
+            <p>Discover our exquisite collection of handwoven silk sarees, crafted with generations of expertise and passion for authentic Indian textiles.</p>
+            <a href="#products" class="btn">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-title">
+            <h2>Our Heritage</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Three Generations of Silk Excellence</h3>
+                <p>Founded in 1985, Ananda Silks has been a trusted name in Karur for premium quality silk sarees. Our family has been in the silk business for over three generations, bringing you the finest handloom and powerloom silk sarees from across India.</p>
+                <p>We specialize in Kanchipuram silk, Banarasi silk, Mysore silk, and other traditional varieties, each carefully selected for its quality, craftsmanship, and authentic designs.</p>
+                <p>Our commitment to preserving traditional weaving techniques while embracing modern designs has made us a favorite among silk connoisseurs in Tamil Nadu and beyond.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://www.psrsilks.com/cdn/shop/files/IMG_9303_348b44e1-3ed3-4d73-947a-4fa195d819f3.jpg?v=1713332649&width=1920" alt="Ananda Silks Shop Interior">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section products" id="products">
+        <div class="section-title">
+            <h2>Our Collections</h2>
+        </div>
+        <div class="product-categories">
+            <a href="#top-rated"><button class="category-btn active">Top Rated</button></a>
+            <a href="#mens-wear"><button class="category-btn">Mens wear</button></a>
+            <a href="#kids-wear"><button class="category-btn">Kids wear</button></a>
+            <a href="#mysore"><button class="category-btn">Mysore</button></a>
+            <a href="#bridal"><button class="category-btn">Bridal</button></a>
+            <a href="#designer"><button class="category-btn">Designer</button></a>
+        </div>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://thesstudioonline.com/cdn/shop/articles/13-1.webp?v=1690173636" alt="Traditional Kanchipuram Silk Saree">
+                </div>
+                <div class="product-info">
+                    <h3>Traditional Kanchipuram Silk</h3>
+                    <p>Pure zari work with temple border</p>
+                    <p class="price">₹8,500</p>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://banarasikargha.in/cdn/shop/products/DSC3296_215ab0e2-8385-4e03-84b7-b1bc0a07f17f.jpg?v=1662638038" alt="Banarasi Silk Saree">
+                </div>
+                <div class="product-info">
+                    <h3>Banarasi Silk</h3>
+                    <p>Intricate brocade work with gold zari</p>
+                    <p class="price">₹12,000</p>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://www.rajsilkvilla.com/cdn/shop/files/WhatsAppImage2025-04-28at17.48.29_64da6273.jpg?v=1745862777&width=533" alt="Mysore Silk Saree">
+                </div>
+                <div class="product-info">
+                    <h3>Mysore Silk</h3>
+                    <p>Lightweight with minimal zari work</p>
+                    <p class="price">₹6,500</p>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://cdn.shopify.com/s/files/1/0565/1670/6422/files/Snapinsta.app_430199938_1084305529534218_2246257548612592978_n_1080.jpg?v=1716205265" alt="Bridal Silk Saree">
+                </div>
+                <div class="product-info">
+                    <h3>Bridal Special</h3>
+                    <p>Heavy zari work with contrast border</p>
+                    <p class="price">₹25,000</p>
+                </div>
+            </div>
+            
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://mysilklove.com/cdn/shop/files/msl-d4_1160401c-fbaa-4619-8377-56ded27cfb9d.jpg?v=1702461481&width=1000" alt="Designer Silk Saree">
+                </div>
+                <div class="product-info">
+                    <h3>Designer Silk</h3>
+                    <p>Contemporary patterns with traditional motifs</p>
+                    <p class="price">₹9,800</p>
+                </div>
+            </div>
+            
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://www.beatitude.in/cdn/shop/products/34.3.jpg?v=1671534475" alt="Tussar Silk Saree">
+                </div>
+                <div class="product-info">
+                    <h3>Tussar Silk</h3>
+                    <p>Eco-friendly with natural dyes</p>
+                    <p class="price">₹7,200</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="section-title">
+            <h2>Customer Experiences</h2>
+        </div>
+        <div class="testimonial-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    <p>I've been buying sarees from Ananda Silks for my daughter's wedding. The quality is exceptional and the designs are authentic. Mr. Kumar helped me select the perfect sarees within my budget.</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2022/04/Rajalakshmi_TS-transformed.png" alt="Mrs. Rajalakshmi">
+                    <div class="author-info">
+                        <h4>Mrs. Rajalakshmi</h4>
+                        <p>Chennai</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    <p>Ananda Silks has the best collection of Kanchipuram sarees in Karur. I purchased 3 sarees last month and the craftsmanship is outstanding. Will definitely recommend to my friends.</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2025/03/Dr__B__Priya_Esther.png" alt="Dr. Priya">
+                    <div class="author-info">
+                        <h4>Dr. Priya</h4>
+                        <p>Coimbatore</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    <p>As an NRI, I was looking for authentic Indian silk sarees to gift my relatives abroad. Ananda Silks helped me choose the perfect sarees and even arranged shipping. Excellent service!</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://faculty.cambridge.edu.in/wp-content/uploads/2023/07/2-3-300x300.jpg" alt="Mr. Arun">
+                    <div class="author-info">
+                        <h4>Mr. Arun</h4>
+                        <p>USA (Originally from Karur)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Add this section after the Testimonials section and before the Contact section -->
+
+<!-- Men's Wear Section -->
+<section class="section" id="mens-wear">
+    <div class="section-title">
+        <h2>Men's Wear Collection</h2>
+    </div>
+    
+    <div class="product-categories">
+        <button class="category-btn active" data-category="all">All</button>
+        <button class="category-btn" data-category="cotton-pants">Cotton Pants</button>
+        <button class="category-btn" data-category="jeans">Jeans</button>
+        <button class="category-btn" data-category="inners">Innerwear</button>
+        <button class="category-btn" data-category="shirts">Shirts</button>
+        <button class="category-btn" data-category="nightwear">Nightwear</button>
+        <button class="category-btn" data-category="track-pants">Track Pants</button>
+        <button class="category-btn" data-category="rip-pants">Rip Pants</button>
+    </div>
+    
+    <div class="product-grid">
+        <!-- Cotton Pants 1 -->
+        <div class="product-card" data-category="cotton-pants">
+            <div class="product-image">
+                <img src="https://5.imimg.com/data5/FP/JS/MY-31258951/formal-men-cotton-pant-500x500.jpg" alt="Formal Cotton Pant - Beige">
+            </div>
+            <div class="product-info">
+                <h3>Formal Cotton Pant</h3>
+                <p>Premium cotton, slim fit, beige color</p>
+                <p class="price">₹1,299</p>
+                <p class="sizes">Sizes: 28-40</p>
+            </div>
+        </div>
+        
+        <!-- Cotton Pants 2 -->
+        <div class="product-card" data-category="cotton-pants">
+            <div class="product-image">
+                <img src="https://tiimg.tistatic.com/fp/1/007/710/skin-friendly-full-length-slim-fit-comfortable-casual-wear-mens-formal-pant-510.jpg" alt="Casual Cotton Pant - Black">
+            </div>
+            <div class="product-info">
+                <h3>Casual Cotton Pant</h3>
+                <p>Comfort fit, black color, wrinkle-free</p>
+                <p class="price">₹1,099</p>
+                <p class="sizes">Sizes: 28-38</p>
+            </div>
+        </div>
+        
+        <!-- Jeans 1 -->
+        <div class="product-card" data-category="jeans">
+            <div class="product-image">
+                <img src="https://images.bestsellerclothing.in/data/JJ/27-aug-2024/900795601_g2.jpg?width=1080&height=1355&mode=fill&fill=blur&format=auto" alt="Slim Fit Jeans - Blue">
+            </div>
+            <div class="product-info">
+                <h3>Slim Fit Jeans</h3>
+                <p>Stretchable denim, dark blue, premium quality</p>
+                <p class="price">₹1,599</p>
+                <p class="sizes">Sizes: 28-36</p>
+            </div>
+        </div>
+        
+        <!-- Jeans 2 -->
+        <div class="product-card" data-category="jeans">
+            <div class="product-image">
+                <img src="https://imagescdn.vanheusenindia.com/img/app/product/3/39943309-19034245.jpg?auto=format&w=390" alt="Regular Fit Jeans - Black">
+            </div>
+            <div class="product-info">
+                <h3>Regular Fit Jeans</h3>
+                <p>Classic black jeans, comfortable fit</p>
+                <p class="price">₹1,399</p>
+                <p class="sizes">Sizes: 30-40</p>
+            </div>
+        </div>
+        
+        <!-- Innerwear - Genset -->
+        <div class="product-card" data-category="inners">
+            <div class="product-image">
+                <img src="https://content.jdmagicbox.com/v2/comp/bangalore/u2/080pxx80.xx80.170316035414.z2u2/catalogue/crepeon-textiles-llp-bangalore-1fsudcqyiz-250.jpg" alt="Cotton Genset Vest - White">
+            </div>
+            <div class="product-info">
+                <h3>Cotton Genset Vest</h3>
+                <p>100% cotton, breathable fabric, pack of 3</p>
+                <p class="price">₹499</p>
+                <p class="sizes">Sizes: S, M, L, XL</p>
+            </div>
+        </div>
+        
+        <!-- Cotton Shirt 1 -->
+        <div class="product-card" data-category="shirts">
+            <div class="product-image">
+                <img src="https://5.imimg.com/data5/CR/YI/MY-10709324/formal-cotton-shirt-500x500.jpg" alt="Formal Cotton Shirt - White">
+            </div>
+            <div class="product-info">
+                <h3>Formal Cotton Shirt</h3>
+                <p>Premium cotton, slim fit, white color</p>
+                <p class="price">₹999</p>
+                <p class="sizes">Sizes: 38-44</p>
+            </div>
+        </div>
+        
+        <!-- Cotton Shirt 2 -->
+        <div class="product-card" data-category="shirts">
+            <div class="product-image">
+                <img src="https://myraymond.com/cdn/shop/files/CMSS30011-B3-1.jpg?v=1725608561" alt="Casual Cotton Shirt - Blue">
+            </div>
+            <div class="product-info">
+                <h3>Casual Cotton Shirt</h3>
+                <p>Comfort fit, light blue, wrinkle-resistant</p>
+                <p class="price">₹899</p>
+                <p class="sizes">Sizes: 38-42</p>
+            </div>
+        </div>
+        
+        <!-- Boys Shirt 1 -->
+        <div class="product-card" data-category="shirts">
+            <div class="product-image">
+                <img src="https://images.meesho.com/images/products/143504033/xzq8f_512.webp" alt="Boys Formal Shirt - White">
+            </div>
+            <div class="product-info">
+                <h3>Boys Formal Shirt</h3>
+                <p>School wear, premium quality, white color</p>
+                <p class="price">₹599</p>
+                <p class="sizes">Sizes: 20-34</p>
+            </div>
+        </div>
+        
+        <!-- White Shirt -->
+        <div class="product-card" data-category="shirts">
+            <div class="product-image">
+                <img src="https://dland.co.in/cdn/shop/files/SHIRT-STNWHT-FRONT-MALE-5.jpg?v=1738865117" alt="Classic White Shirt">
+            </div>
+            <div class="product-info">
+                <h3>Classic White Shirt</h3>
+                <p>100% cotton, formal wear, easy iron</p>
+                <p class="price">₹1,099</p>
+                <p class="sizes">Sizes: 38-44</p>
+            </div>
+        </div>
+        
+        <!-- Night Pant 1 -->
+        <div class="product-card" data-category="nightwear">
+            <div class="product-image">
+                <img src="https://m.media-amazon.com/images/I/81ZJU3pNOoL.jpg" alt="Cotton Night Pant - Checkered">
+            </div>
+            <div class="product-info">
+                <h3>Cotton Night Pant</h3>
+                <p>Comfortable sleepwear, checkered pattern</p>
+                <p class="price">₹699</p>
+                <p class="sizes">Sizes: S, M, L, XL</p>
+            </div>
+        </div>
+        
+        <!-- Track Pant 1 -->
+        <div class="product-card" data-category="track-pants">
+            <div class="product-image">
+                <img src="https://tiimg.tistatic.com/fp/1/007/288/good-quality-stretchable-sports-track-pants-for-mens-splendid-look-captivate-design-machine-made-skin-friendly-soft-texture-fits-perfectly-size-s-to-xl-116.jpg" alt="Sports Track Pant - Black">
+            </div>
+            <div class="product-info">
+                <h3>Sports Track Pant</h3>
+                <p>Elastic waistband, breathable fabric</p>
+                <p class="price">₹799</p>
+                <p class="sizes">Sizes: S, M, L, XL</p>
+            </div>
+        </div>
+        
+        <!-- Track Pant 2 -->
+        <div class="product-card" data-category="track-pants">
+            <div class="product-image">
+                <img src="https://www.teez.in/cdn/shop/products/html-Tag-Joggers-For-Men-Grey_large.jpg?v=1620031803" alt="Jogger Track Pant - Grey">
+            </div>
+            <div class="product-info">
+                <h3>Jogger Track Pant</h3>
+                <p>Modern fit, tapered legs, grey color</p>
+                <p class="price">₹899</p>
+                <p class="sizes">Sizes: S, M, L, XL</p>
+            </div>
+        </div>
+        
+        <!-- Rip Pant 1 -->
+        <div class="product-card" data-category="rip-pants">
+            <div class="product-image">
+                <img src="https://5.imimg.com/data5/ANDROID/Default/2020/11/QF/BF/TB/47947548/product-jpeg-500x500.jpg" alt="Fashion Rip Pant - Blue">
+            </div>
+            <div class="product-info">
+                <h3>Fashion Rip Pant</h3>
+                <p>Trendy distressed look, slim fit</p>
+                <p class="price">₹1,299</p>
+                <p class="sizes">Sizes: 28-36</p>
+            </div>
+        </div>
+        
+        <!-- Rip Pant 2 -->
+        <div class="product-card" data-category="rip-pants">
+            <div class="product-image">
+                <img src="https://s.alicdn.com/@sc04/kf/Had6437d530524e5f865815d3353f198aH.jpg_720x720q50.jpg" alt="Casual Rip Pant - Black">
+            </div>
+            <div class="product-info">
+                <h3>Casual Rip Pant</h3>
+                <p>Comfortable fabric, stylish tears</p>
+                <p class="price">₹1,199</p>
+                <p class="sizes">Sizes: 30-38</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Add this section after the Men's Wear section and before the Contact section -->
+
+<!-- Kids Wear Section -->
+<section class="section" id="kids-wear">
+    <div class="section-title">
+        <h2>Kids Wear Collection</h2>
+    </div>
+    
+    <div class="product-categories">
+        <button class="category-btn active" data-category="all">All</button>
+        <button class="category-btn" data-category="boys">Boys</button>
+        <button class="category-btn" data-category="girls">Girls</button>
+        <button class="category-btn" data-category="unisex">Unisex</button>
+        <button class="category-btn" data-category="ethnic">Ethnic Wear</button>
+        <button class="category-btn" data-category="western">Western Wear</button>
+        <button class="category-btn" data-category="innerwear">Innerwear</button>
+        <button class="category-btn" data-category="seasonal">Seasonal</button>
+    </div>
+    
+    <div class="product-grid">
+        <!-- Boys Wear 1 -->
+        <div class="product-card" data-category="boys western">
+            <div class="product-image">
+                <img src="https://brownliving.in/cdn/shop/products/bumblebee-formal-shirt-for-boys-kids-clothing-sustainable-products-on-brown-living-327237.jpg?v=1711003089" alt="Boys Formal Shirt - Blue">
+            </div>
+            <div class="product-info">
+                <h3>Boys Formal Shirt</h3>
+                <p>Premium cotton, school wear, blue color</p>
+                <p class="price">₹499</p>
+                <p class="sizes">Age: 3-12 years</p>
+                <p class="gender">Boys</p>
+            </div>
+        </div>
+        
+        <!-- Boys Wear 2 -->
+        <div class="product-card" data-category="boys western">
+            <div class="product-image">
+                <img src="https://seasonschennai.com/cdn/shop/products/4063greyEdited1.jpg?v=1620131866&width=1080" alt="Boys Formal Pant - Grey">
+            </div>
+            <div class="product-info">
+                <h3>Boys Formal Pant</h3>
+                <p>Comfort fit, grey color, school uniform</p>
+                <p class="price">₹599</p>
+                <p class="sizes">Age: 4-14 years</p>
+                <p class="gender">Boys</p>
+            </div>
+        </div>
+        
+        <!-- Girls Wear 1 -->
+        <div class="product-card" data-category="girls ethnic">
+            <div class="product-image">
+                <img src="https://www.thenesavu.com/cdn/shop/files/nesavu-yellow-sequin-sunshine-cotton-frock-with-paisley-prints-girls-cotton-frock-22-4y-yellow-georgette-thenesavu-gfc1131b-22-simple-cotton-frock-design-for-girls-baby-frock-cotton-t_6b919153-f54d-411a-b19b-4faaf359f017.jpg?v=1741692926" alt="Girls Cotton Frock - Pink">
+            </div>
+            <div class="product-info">
+                <h3>Girls Cotton Frock</h3>
+                <p>Traditional design, pink color, comfortable</p>
+                <p class="price">₹799</p>
+                <p class="sizes">Age: 2-8 years</p>
+                <p class="gender">Girls</p>
+            </div>
+        </div>
+        
+        <!-- Girls Wear 2 -->
+        <div class="product-card" data-category="girls western">
+            <div class="product-image">
+                <img src="https://images.meesho.com/images/products/473006572/ckgkx_512.webp" alt="Girls Casual Top - Yellow">
+            </div>
+            <div class="product-info">
+                <h3>Girls Casual Top</h3>
+                <p>Stylish design, yellow color, soft fabric</p>
+                <p class="price">₹649</p>
+                <p class="sizes">Age: 3-10 years</p>
+                <p class="gender">Girls</p>
+            </div>
+        </div>
+        
+        <!-- Unisex 1 -->
+        <div class="product-card" data-category="unisex seasonal">
+            <div class="product-image">
+                <img src="https://assets.ajio.com/medias/sys_master/root/20240726/1I1m/66a3d1001d763220fa38175e/-473Wx593H-700232194-multi-MODEL.jpg" alt="Kids Graphic T-shirt - White">
+            </div>
+            <div class="product-info">
+                <h3>Kids Graphic T-shirt</h3>
+                <p>Cartoon print, 100% cotton, white color</p>
+                <p class="price">₹399</p>
+                <p class="sizes">Age: 2-12 years</p>
+                <p class="gender">Unisex</p>
+            </div>
+        </div>
+        
+        <!-- Unisex 2 -->
+        <div class="product-card" data-category="unisex western">
+            <div class="product-image">
+                <img src="https://m.media-amazon.com/images/I/810jZ1HXhLL._AC_UY1100_.jpg" alt="Kids Denim Jeans - Blue">
+            </div>
+            <div class="product-info">
+                <h3>Kids Denim Jeans</h3>
+                <p>Stretchable fabric, blue color, comfortable</p>
+                <p class="price">₹899</p>
+                <p class="sizes">Age: 4-14 years</p>
+                <p class="gender">Unisex</p>
+            </div>
+        </div>
+        
+        <!-- Ethnic Wear 1 -->
+        <div class="product-card" data-category="boys ethnic">
+            <div class="product-image">
+                <img src="https://img.perniaspopupshop.com/catalog/product/m/i/MITYAK062322_1.jpg?impolicy=detailimageprod" alt="Boys Silk Kurta - Gold">
+            </div>
+            <div class="product-info">
+                <h3>Boys Silk Kurta</h3>
+                <p>Festival wear, golden color, traditional</p>
+                <p class="price">₹1,299</p>
+                <p class="sizes">Age: 3-12 years</p>
+                <p class="gender">Boys</p>
+            </div>
+        </div>
+        
+        <!-- Ethnic Wear 2 -->
+        <div class="product-card" data-category="girls ethnic">
+            <div class="product-image">
+                <img src="https://pictures.kartmax.in/live/sites/9s145MyZrWdIAwpU0JYS/product-images/goergette_wedding_look_girls_lehenga_choli_in_peach_16687528441004_pch_as2545623.jpg" alt="Girls Lehenga Choli - Pink">
+            </div>
+            <div class="product-info">
+                <h3>Girls Lehenga Choli</h3>
+                <p>Party wear, pink color, zari work</p>
+                <p class="price">₹1,899</p>
+                <p class="sizes">Age: 3-10 years</p>
+                <p class="gender">Girls</p>
+            </div>
+        </div>
+        
+        <!-- Western Wear 1 -->
+        <div class="product-card" data-category="boys western">
+            <div class="product-image">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/track-suit/u/q/d/2-3-years-kp029-bl-beyond-bee-original-imagh5zhfnwcn2fn.jpeg?q=90&crop=false" alt="Boys Track Suit - Blue">
+            </div>
+            <div class="product-info">
+                <h3>Boys Track Suit</h3>
+                <p>Sports wear, full sleeves, blue color</p>
+                <p class="price">₹1,099</p>
+                <p class="sizes">Age: 5-14 years</p>
+                <p class="gender">Boys</p>
+            </div>
+        </div>
+        
+        <!-- Western Wear 2 -->
+        <div class="product-card" data-category="girls western">
+            <div class="product-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrp-EweBBxnAy3aW2mmy9ehXiG-4DTNLkDEA&s" alt="Girls Party Dress - Red">
+            </div>
+            <div class="product-info">
+                <h3>Girls Party Dress</h3>
+                <p>Fancy dress, red color, frock style</p>
+                <p class="price">₹1,199</p>
+                <p class="sizes">Age: 2-8 years</p>
+                <p class="gender">Girls</p>
+            </div>
+        </div>
+        
+        <!-- Innerwear 1 -->
+        <div class="product-card" data-category="boys innerwear">
+            <div class="product-image">
+                <img src="https://www.ookababy.in/cdn/shop/files/BoysvestBlue1front.png?v=1709103412&width=1445" alt="Boys Cotton Vest - White">
+            </div>
+            <div class="product-info">
+                <h3>Boys Cotton Vest</h3>
+                <p>Pack of 3, soft fabric, white color</p>
+                <p class="price">₹349</p>
+                <p class="sizes">Age: 4-12 years</p>
+                <p class="gender">Boys</p>
+            </div>
+        </div>
+        
+        <!-- Innerwear 2 -->
+        <div class="product-card" data-category="girls innerwear">
+            <div class="product-image">
+                <img src="https://5.imimg.com/data5/GH/OU/WH/SELLER-43485276/girls-fancy-pink-panties-500x500.jpg" alt="Girls Cotton Panties - Assorted">
+            </div>
+            <div class="product-info">
+                <h3>Girls Cotton Panties</h3>
+                <p>Pack of 5, assorted colors, comfortable</p>
+                <p class="price">₹449</p>
+                <p class="sizes">Age: 3-10 years</p>
+                <p class="gender">Girls</p>
+            </div>
+        </div>
+        
+        <!-- Seasonal 1 -->
+        <div class="product-card" data-category="unisex seasonal">
+            <div class="product-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThPHofh55KKmwjfv8xTUwsTNUPlhSZHuvS3A&s" alt="Kids Woolen Sweater - Red">
+            </div>
+            <div class="product-info">
+                <h3>Kids Woolen Sweater</h3>
+                <p>Winter wear, red color, warm fabric</p>
+                <p class="price">₹799</p>
+                <p class="sizes">Age: 2-10 years</p>
+                <p class="gender">Unisex</p>
+            </div>
+        </div>
+        
+        <!-- Seasonal 2 -->
+        <div class="product-card" data-category="unisex seasonal">
+            <div class="product-image">
+                <img src="https://www.jiomart.com/images/product/original/rvb7aua82u/palay-unisex-yellow-polyester-raincoat-for-school-boys-girls-with-hood-pockets-and-school-bag-coverage-bright-color-raincoat-product-images-rvb7aua82u-0-202306142037.jpg?im=Resize=(1000,1000)" alt="Kids Raincoat - Yellow">
+            </div>
+            <div class="product-info">
+                <h3>Kids Raincoat</h3>
+                <p>Waterproof, yellow color, with hood</p>
+                <p class="price">₹599</p>
+                <p class="sizes">Age: 3-8 years</p>
+                <p class="gender">Unisex</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Women's Wear Section -->
+<section class="section" id="womens-wear">
+    <div class="section-title">
+        <h2>Women's Wear Collection</h2>
+    </div>
+    
+    <div class="product-categories">
+        <button class="category-btn active" data-category="all">All</button>
+        <button class="category-btn" data-category="sarees">Sarees</button>
+        <button class="category-btn" data-category="salwar-suits">Salwar Suits</button>
+        <button class="category-btn" data-category="lehenga">Lehenga</button>
+        <button class="category-btn" data-category="western">Western Wear</button>
+        <button class="category-btn" data-category="nightwear">Nightwear</button>
+    </div>
+    
+    <div class="product-grid">
+        <!-- Saree 1 -->
+        <div class="product-card" data-category="sarees">
+            <div class="product-image">
+                <img src="https://rmkv.com/cdn/shop/files/KA99872_313fe95e-d6dd-4bd0-b781-2514d09e3c46.webp?v=1726646214" alt="Kanchipuram Silk Saree">
+            </div>
+            <div class="product-info">
+                <h3>Kanchipuram Silk Saree</h3>
+                <p>Traditional design, pure silk</p>
+                <p class="price">₹12,000</p>
+            </div>
+        </div>
+        
+        <!-- Salwar Suit 1 -->
+        <div class="product-card" data-category="salwar-suits">
+            <div class="product-image">
+                <img src="https://peachmode.com/cdn/shop/products/2_AARD-NAMAH-1491-PINK-PEACHMODE.jpg?v=1680169378&width=2000" alt="Cotton Salwar Suit">
+            </div>
+            <div class="product-info">
+                <h3>Cotton Salwar Suit</h3>
+                <p>Comfortable daily wear</p>
+                <p class="price">₹2,500</p>
+            </div>
+        </div>
+        
+        <!-- Lehenga 1 -->
+        <div class="product-card" data-category="lehenga">
+            <div class="product-image">
+                <img src="https://sareesbazaar.com/cdn/shop/files/SB61_2371_150_37b27b3b-4235-4523-a832-4999e078c3ac.jpg?v=1741331639" alt="Bridal Lehenga">
+            </div>
+            <div class="product-info">
+                <h3>Bridal Lehenga</h3>
+                <p>Heavy embroidery, premium fabric</p>
+                <p class="price">₹25,000</p>
+            </div>
+        </div>
+        
+        <!-- Western Wear 1 -->
+        <div class="product-card" data-category="western">
+            <div class="product-image">
+                <img src="https://media.samyakk.com/pub/media/tagalys/product_images/p/i/pink-sequins-embroidered-net-indowestern-gown-with-curved-v-neck-gm3850.jpg" alt="Evening Gown">
+            </div>
+            <div class="product-info">
+                <h3>Evening Gown</h3>
+                <p>Elegant design, perfect for parties</p>
+                <p class="price">₹5,000</p>
+            </div>
+        </div>
+        
+        <!-- Nightwear 1 -->
+        <div class="product-card" data-category="nightwear">
+            <div class="product-image">
+                <img src="https://modernzy.in/cdn/shop/files/785d4aa9-5764-4d40-afe8-05717d150797_d154b052-7d0b-4897-b9e2-7cc3a7a114d0.webp?v=1732250819&width=1445" alt="Silk Nightwear">
+            </div>
+            <div class="product-info">
+                <h3>Silk Nightwear</h3>
+                <p>Soft and luxurious fabric</p>
+                <p class="price">₹1,800</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>Visit Us</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Our Store</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p>No. 45, Gandhi Road</p>
+                            <p>Karur, Tamil Nadu - 639001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <p>+91 98765 43210</p>
+                            <p>+91 43210 98765</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <p>info@anandasilks.com</p>
+                            <p>sales@anandasilks.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <p>Monday - Saturday: 9:30 AM - 8:30 PM</p>
+                            <p>Sunday: 10:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Send Enquiry</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <img src="https://img.freepik.com/premium-vector/fashion-saree-logo-design-with-women-figure-template-illustration-generative-ai_1161132-804.jpg" alt="Ananda Silks Logo">
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="copyright">© 2023 Ananda Silks. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu and product filtering
+        document.addEventListener('DOMContentLoaded', function () {
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuBtn.addEventListener('click', function () {
+        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth',
+            });
+
+            // Close mobile menu if open
+            if (window.innerWidth <= 768) {
+                navLinks.style.display = 'none';
+            }
+        });
+    });
+});
+            
+            // Product filtering (basic implementation)
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // In a real implementation, you would filter products here
+                    // This is just a placeholder for the functionality
+                });
+            });
+            
+            // Update year in copyright
+            document.querySelector('.copyright').textContent = 
+                document.querySelector('.copyright').textContent.replace('2023', new Date().getFullYear());
+        });
+        // Enhanced filtering functionality for men's wear
+const menCategoryBtns = document.querySelectorAll('#mens-wear .category-btn');
+const menProducts = document.querySelectorAll('#mens-wear .product-card');
+
+menCategoryBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Remove active class from all buttons in men's section
+        menCategoryBtns.forEach(b => b.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        const category = this.getAttribute('data-category');
+        
+        // Filter products
+        menProducts.forEach(product => {
+            if (category === 'all' || product.getAttribute('data-category') === category) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    });
+});
+// Enhanced filtering functionality for kids wear
+const kidsCategoryBtns = document.querySelectorAll('#kids-wear .category-btn');
+const kidsProducts = document.querySelectorAll('#kids-wear .product-card');
+
+kidsCategoryBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Remove active class from all buttons in kids section
+        kidsCategoryBtns.forEach(b => b.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        const category = this.getAttribute('data-category');
+        
+        // Filter products
+        kidsProducts.forEach(product => {
+            const productCategories = product.getAttribute('data-category').split(' ');
+            
+            if (category === 'all' || productCategories.includes(category)) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    });
+});
+// Enhanced filtering functionality for women's wear
+const womenCategoryBtns = document.querySelectorAll('#womens-wear .category-btn');
+const womenProducts = document.querySelectorAll('#womens-wear .product-card');
+
+womenCategoryBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Remove active class from all buttons in women's section
+        womenCategoryBtns.forEach(b => b.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        const category = this.getAttribute('data-category');
+        
+        // Filter products
+        womenProducts.forEach(product => {
+            if (category === 'all' || product.getAttribute('data-category') === category) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    });
+});
+    </script>
+</body>
+</html>
